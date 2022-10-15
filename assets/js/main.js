@@ -227,27 +227,23 @@ window.addEventListener('DOMContentLoaded', () => {
         // ОБЪЯВЛЕНИЕ ПЕРЕМЕННЫХ
   const menu = document.querySelector('.menu'),
         menuItem = document.querySelectorAll('.menu__item'),
-        hamburger = document.querySelector('.menu__btn'),
-        callBtn = document.querySelector('.call__btn');
+        hamburger = document.querySelector('.menu__btn');
 
           // КНОПКА ГАМБУРГЕР МЕНЯЕТ АКТИВНОСТЬ И ПОКАЗЫВАЕТ МЕНЮ
         hamburger.addEventListener('click', () => {
           hamburger.classList.toggle('menu__btn-active'),
           menu.classList.toggle('menu-active');
         });
-        // ПРИ НАЖАТИИ НА КНОПКУ "ПОЗВОНИТЬ, ОТКРЫВАЕТСЯ ВЫЗОВ ФОРМЫ" ДОБАВЛЯЕТСЯ КЛАСС "НАЖАТИЯ, АКТИВНОСТИ" КНОПКИ 
-        // callBtn.addEventListener('click', () => {
-        //   callBtn.classList.toggle('call__btn-active');
-        // });
         // ПРИ НАЖАТИИ НА ПУНКТ МЕНЮ ИЛИ КНОПКУ ГАМБУРГЕР СКРЫВАЕТСЯ МЕНЮ
-        menuItem.forEach(item => {
-          item.addEventListener('click', () => {
-            if(item!==item.querySelector('button')){
-              hamburger.classList.toggle('menu__btn-active'),
-              menu.classList.toggle('menu-active');
+        menuItem.forEach((item) => {
+          item.addEventListener("click", () => {
+            if (item === item.querySelector("#menu__item-btn")) {
+            } else {
+              hamburger.classList.toggle("menu__btn-active"),
+              menu.classList.toggle("menu-active");
             }
-          })
-        })
+          });
+        });
         // ПОДСВЕЧИВАНИЕ АКТИВНЫХ ССЫЛОК НА СТРАНИЦЕ(активные ссылки)
 
         $(function () {
