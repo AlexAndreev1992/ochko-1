@@ -1,5 +1,3 @@
-
-
 $(function(){
     $('.top-slider').slick({
         dots: true,
@@ -205,8 +203,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
               el.classList.remove('dropdown-show');
             }
           })
+
           drop.classList.toggle('dropdown-show');
           currentBtn.classList.toggle('active');
+          // arr.classList.toggle('rotate');
       })
       document.addEventListener('click', (e)=>{
         if (!e.target.closest('.menu')) {

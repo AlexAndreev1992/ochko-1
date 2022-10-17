@@ -73,7 +73,7 @@
                     </ul>
                 </div>
                 <li class="menu__item">
-                    <a class="menu__link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-home" aria-hidden="true"></i> <span>На главную</span></a>
+                    <a class="menu__link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><i id="main-home" class="fa fa-home" aria-hidden="true"></i> <span>На главную</span></a>
                 </li>
                 <li class="menu__item">
                     <a class="menu__link" href="ustanovka-tah">Установка тахографов</a>
