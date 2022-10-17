@@ -135,11 +135,11 @@
             <button id="submit" class="call__btn2 call__btn2-modal">Отправить</button>
         </form> -->
     </div>
-    <div class="modal modal-mini" id="thanks">
+    <!-- <div class="modal modal-mini" id="thanks">
         <div class="modal__close">&times;</div>
         <div class="modal__subtitle">Спасибо за вашу заявку!</div>
         <div class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
-    </div>
+    </div> -->
 </div>
 
     <?php wp_footer();?>

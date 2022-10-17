@@ -128,25 +128,26 @@ $(function(){
         // МАСКА ТЕЛЕФОНА
       $('input[name=phone]').mask("+7 (999) 999-99-99");
             // КНОПКА НЕ АКТИВНА ПОКА НЕ ЗАПОЛНЕНЫ ПОЛЯ
-      let textArea = document.getElementById('message'),
-            name = document.getElementById('feedname'),
-            phone = document.getElementById('phone'),
-            submit = document.getElementById('submit')
+      // let textArea = document.getElementById('message'),
+      //       name = document.getElementById('feedname'),
+      //       phone = document.getElementById('phone'),
+      //       submit = document.getElementById('submit')
 
-        submit.setAttribute('disabled', true);
-        textArea.oninput = function(){
-          if (textArea.value.length < 5){
-            submit.setAttribute('disabled', true);
-          } else if(name.value.length < 2){
-              submit.setAttribute('disabled', true);
-            }
-            else if(phone.value.length < 2){
-              submit.setAttribute('disabled', true);
-            }
-          else{
-            submit.removeAttribute('disabled');
-          }
-        }
+      //   submit.setAttribute('disabled', true);
+      //   textArea.oninput = function(){
+      //     if (textArea.value.length < 5){
+      //       submit.setAttribute('disabled', true);
+      //     }
+      //     // } else if(name.value.length < 2){
+      //     //     submit.setAttribute('disabled', true);
+      //     //   }
+      //     //   else if(phone.value.length < 2){
+      //     //     submit.setAttribute('disabled', true);
+      //     //   }
+      //     // else{
+      //     //   submit.removeAttribute('disabled');
+      //     // }
+      //   }
       // ОТПРАВЛЕНИЕ ДАННЫХ С ФОРМЫ НА ПОЧТУ
       // $('form').on('submit', function(e) {
       //   e.preventDefault()
@@ -227,31 +228,45 @@ window.addEventListener('DOMContentLoaded', () => {
         // ОБЪЯВЛЕНИЕ ПЕРЕМЕННЫХ
   const menu = document.querySelector('.menu'),
         menuItem = document.querySelectorAll('.menu__item'),
-        hamburger = document.querySelector('.menu__btn');
+        hamburger = document.querySelector('.menu__btn'),
+        menuItemBtn = document.querySelector('#menu__item-btn'),
+        menuItemBtn2 = document.querySelector('#sub-menu2__btn');
+    let location = window.location.href;
 
           // КНОПКА ГАМБУРГЕР МЕНЯЕТ АКТИВНОСТЬ И ПОКАЗЫВАЕТ МЕНЮ
         hamburger.addEventListener('click', () => {
           hamburger.classList.toggle('menu__btn-active'),
           menu.classList.toggle('menu-active');
+          console.log(location)
+
         });
         // ПРИ НАЖАТИИ НА ПУНКТ МЕНЮ ИЛИ КНОПКУ ГАМБУРГЕР СКРЫВАЕТСЯ МЕНЮ
         menuItem.forEach((item) => {
           item.addEventListener("click", () => {
-            if (item === item.querySelector("#menu__item-btn")) {
+            if (item.contains(menuItemBtn) || item.contains(menuItemBtn2)) {
+              // console.log('Нажата КНОПКА - Открывается дропдаун!')
+              // console.log(item)
             } else {
-              hamburger.classList.toggle("menu__btn-active"),
+              // console.log('Нажата ссылка - Закрывается меню!')
+              
+              hamburger.classList.toggle("menu__btn-active")
               menu.classList.toggle("menu-active");
             }
           });
+
+        //   if (taskList.clildren.Length > 1){
+        //     emptyList.classList.add('none')
+        // }
+
         });
         // ПОДСВЕЧИВАНИЕ АКТИВНЫХ ССЫЛОК НА СТРАНИЦЕ(активные ссылки)
 
         $(function () {
-          var location = window.location.href;
-          var cur_url = '/' + location.split('/').pop();
+          let location = window.location.href;
+          let cur_url = '/' + location.split('/').pop();
        
           $('.menu li').each(function () {
-              var link = $(this).find('a').attr('href');
+              let link = $(this).find('a').attr('href');
        
               if (cur_url == link) {
                   $(this).addClass('current');
