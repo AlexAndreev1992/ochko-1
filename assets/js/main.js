@@ -189,10 +189,12 @@ $(function(){
 document.addEventListener('DOMContentLoaded', ()=>{
   const menuBtns = document.querySelectorAll('.menu__item-btn');
   const drops = document.querySelectorAll('.menu__item-slide');
+  const arrows = document.querySelectorAll('i');
     menuBtns.forEach(el => {
       el.addEventListener('click', (e)=> {
         let currentBtn = e.currentTarget;
         let drop = currentBtn.nextElementSibling;
+        let arr = currentBtn.querySelector('i');
           menuBtns.forEach(el => {
             if (el !== currentBtn){
               el.classList.remove('active')
@@ -206,7 +208,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
           drop.classList.toggle('dropdown-show');
           currentBtn.classList.toggle('active');
-          menuBtns.forEach(el => {el.querySelector('i').classList.toggle('rotate')})
+          arr.classList.toggle('rotate');
       })
       document.addEventListener('click', (e)=>{
         if (!e.target.closest('.menu')) {
@@ -215,6 +217,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
           });
           drops.forEach(el=>{
               el.classList.remove('dropdown-show');
+          })
+          arrows.forEach(el =>{
+              el.classList.remove('rotate')
           })
         }
       })
