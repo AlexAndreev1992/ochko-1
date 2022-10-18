@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
           drop.classList.toggle('dropdown-show');
           currentBtn.classList.toggle('active');
-          // arr.classList.toggle('rotate');
+          menuBtns.forEach(el => {el.querySelector('i').classList.toggle('rotate')})
       })
       document.addEventListener('click', (e)=>{
         if (!e.target.closest('.menu')) {
@@ -237,7 +237,7 @@ window.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
           hamburger.classList.toggle('menu__btn-active'),
           menu.classList.toggle('menu-active');
-          console.log(location)
+
 
         });
         // ПРИ НАЖАТИИ НА ПУНКТ МЕНЮ ИЛИ КНОПКУ ГАМБУРГЕР СКРЫВАЕТСЯ МЕНЮ
