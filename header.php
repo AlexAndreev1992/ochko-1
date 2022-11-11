@@ -102,7 +102,7 @@
                     <button class="menu__item-btn" id="sub-menu2__btn">Ошибки тахографа <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                     <div class="menu__item-slide" id="sub-menu2">
                         <ul class="sub-menu">
-                            <li class="sub-menu__item"><a class="menu__link" href="">Ошибки тахографа DTCO 1383</a></li>
+                            <li class="sub-menu__item"><a class="menu__link" href="dtco-1381">Ошибки тахографа DTCO 1381</a></li>
                             <li class="sub-menu__item"><a class="menu__link" href="">Ошибки тахографа DTCO 3283</a></li>
                         </ul>
                     </div>
